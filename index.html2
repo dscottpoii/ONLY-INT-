@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boat-Pro — Marine Ops Intelligence</title>
+  <meta name="description" content="Boat-Pro delivers actionable marine operations intel—harbor updates, LNMs/BNMs highlights, gear reviews, and tactics. Subscribe for weekly insights." />
+  <meta name="theme-color" content="#0a2540" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{
+      --bg:#0a1220; --ink:#eef2f7; --muted:#a7b0c0; --brand:#0ea5e9; --brand-2:#22c55e;
+      --card:#0f1a32; --line:#24324a; --gold:#c9a227;
+      --max:1200px; --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(10,18,32,.95),rgba(10,18,32,.70));backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line);z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .brand .mark{width:32px;height:32px;border-radius:8px;background:
+      conic-gradient(from 220deg at 50% 50%, var(--gold), var(--brand), var(--brand-2), var(--gold));
+      box-shadow:0 0 0 2px #0f1a32, 0 6px 18px rgba(0,0,0,.35)}
+    .cta{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--brand);color:#0b1220;background:var(--brand);
+      padding:10px 16px;border-radius:12px;font-weight:600}
+    .cta.secondary{background:transparent;color:var(--ink)}
+    .cta:hover{filter:brightness(1.05)}
+    .hero{padding:72px 0;background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(34,197,94,.08), transparent 60%),
+      radial-gradient(1000px 800px at 10% -20%, rgba(14,165,233,.14), transparent 60%)}
+    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:0 0 12px}
+    .hero p{color:var(--muted);max-width:720px;margin:0 0 20px}
+    .grid{display:grid;gap:18px}
+    @media (min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:1.2fr 1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+    .card h3{margin:0 0 8px;font-size:1.1rem}
+    .pill{display:inline-block;padding:2px 10px;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--muted)}
+    .kpi{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+    .kpi div{background:#0b1730;border:1px dashed var(--line);border-radius:12px;padding:10px 12px}
+    .list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+    .list li{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#0c1830}
+    .muted{color:var(--muted)}
+    .section{padding:40px 0}
+    .foot{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+    /* forms */
+    form{display:flex;flex-wrap:wrap;gap:10px}
+    input[type="email"]{flex:1 1 280px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#0a142a;color:var(--ink)}
+    button[type="submit"]{padding:12px 16px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#0b1220;font-weight:700}
+    button[type="submit"]:hover{filter:brightness(1.05)}
+    /* issue tiles */
+    .tile{display:flex;flex-direction:column;gap:8px}
+    .tile time{font-size:.85rem;color:var(--muted)}
+    .badge{font-size:.72rem;padding:2px 8px;border-radius:999px;background:#122042;border:1px solid var(--line);color:var(--muted)}
+    /* utility */
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .spacer{height:6px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <span>Boat-Pro</span>
+      </div>
+      <nav class="row" aria-label="Primary">
+        <a class="cta secondary" href="#issues">Issues</a>
+        <a class="cta secondary" href="#intel">Ops Intel</a>
+        <a class="cta" href="#subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap grid cols-2">
+      <div>
+        <h1>Marine Ops newsletter—distilled, actionable, on-time.</h1>
+        <p>Weekly briefings for skippers, marina leads, and race teams. Local Notices to Mariners roll-ups, lock status, gear insights, and tactics—without the noise.</p>
+        <div class="row">
+          <a class="cta" href="#subscribe">Get the Briefing</a>
+          <a class="cta secondary" href="#latest">Scan Latest</a>
+        </div>
+        <div class="kpi">
+          <div><strong>5–7 min</strong><br><span class="muted">read time</span></div>
+          <div><strong>Mon 0700 ET</strong><br><span class="muted">delivery cadence</span></div>
+          <div><strong>Harbors: VA–MA</strong><br><span class="muted">coverage</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="pill">This week’s signal</span>
+        <h3 style="margin-top:10px">Norfolk & Chesapeake: lock timings + channel maintenance windows</h3>
+        <p class="muted">Impact synopsis, recommended waypoints, and watch-outs for transits with 6–8 ft draft vessels.</p>
+        <ul class="list" id="latest">
+          <li>Great Bridge Lock: planned closures &amp; VHF sequencing</li>
+          <li>Thimble Shoal: spoils traffic pattern shift</li>
+          <li>Hampton Flats: weekend dredge staging—slow bell</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="cta" href="#issues">Open latest issue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ops Intel -->
+  <section class="section" id="intel">
+    <div class="wrap grid cols-3">
+      <article class="card">
+        <span class="badge">LNM / BNM</span>
+        <h3>Weekly roll-up</h3>
+        <p class="muted">Curated highlights, decoded into plain guidance with lat/long and practical next steps.</p>
+        <a href="#issues">View</a>
+      </article>
+      <article class="card">
+        <span class="badge">Tactics</span>
+        <h3>Transit playbooks</h3>
+        <p class="muted">Bridge windows, tide gates, and alternate routes that de-risk schedules for 6–8 ft draft yachts.</p>
+        <a href="#issues">View</a>
+      </article>
+      <article class="card">
+        <span class="badge">Gear</span>
+        <h3>Pro kit &amp; checklists</h3>
+        <p class="muted">What works on deck and at the dock—hard-won lessons, zero fluff.</p>
+        <a href="#issues">View</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Issues / Archive -->
+  <section class="section" id="issues">
+    <div class="wrap">
+      <div class="row" style="justify-content:space-between;align-items:end">
+        <h2 style="margin:0">Latest Issues</h2>
+        <a class="cta secondary" href="#archive">Full archive</a>
+      </div>
+      <div class="grid cols-3" style="margin-top:16px">
+        <article class="card tile">
+          <time datetime="2025-10-27">Oct 27, 2025</time>
+          <h3>Great Bridge Lock windows + Thimble Shoal traffic</h3>
+          <p class="muted">Timings, holding patterns, and recommended waypoints for northbound transits.</p>
+          <a href="issues/2025-10-27.html">Open issue →</a>
+        </article>
+        <article class="card tile">
+          <time datetime="2025-10-20">Oct 20, 2025</time>
+          <h3>Hampton Roads dredge ops + weekend advisories</h3>
+          <p class="muted">Spoils routing, channel width constraints, and contact points.</p>
+          <a href="issues/2025-10-20.html">Open issue →</a>
+        </article>
+        <article class="card tile">
+          <time datetime="2025-10-13">Oct 13, 2025</time>
+          <h3>Elizabeth River maintenance + temp ATON changes</h3>
+          <p class="muted">Temporary lighted buoys and revised ranges—plot updates inside.</p>
+          <a href="issues/2025-10-13.html">Open issue →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section class="section">
+    <div class="wrap grid cols-3">
+      <div class="card">
+        <h3>Action over noise</h3>
+        <p class="muted">We compress federal notices into concrete go/no-go guidance. You get decision-quality intel, fast.</p>
+      </div>
+      <div class="card">
+        <h3>Built by operators</h3>
+        <p class="muted">Run by marina and delivery pros who’ve logged real miles—traditional seamanship, modern delivery.</p>
+      </div>
+      <div class="card">
+        <h3>Zero spam</h3>
+        <p class="muted">One email, Monday 0700 ET. Unsubscribe anytime. No third-party ads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="section" id="subscribe">
+    <!-- legacy anchor support for old link variants -->
+    <div id="subscribew-up" hidden></div>
+    <div class="wrap">
+      <div class="card">
+        <h2 style="margin-top:0">Subscribe to Boat-Pro</h2>
+        <p class="muted">Join the bridge team. Get the Monday briefing before lines are cast off.</p>
+        <form method="post" action="#" onsubmit="event.preventDefault(); alert('Thanks—check your inbox to confirm.');">
+          <label for="email" class="visually-hidden" style="position:absolute;left:-9999px">Email</label>
+          <input id="email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@vessel.com" required />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="muted" style="font-size:.85rem;margin-top:8px">We use double opt-in. By subscribing you agree to our <a href="legal/privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Archive (optional deep link target) -->
+  <section class="section" id="archive">
+    <div class="wrap">
+      <h2>Archive</h2>
+      <ul class="list">
+        <li><a href="issues/2025-10-06.html">Oct 6, 2025 — York River ATON relocation &amp; advisories</a></li>
+        <li><a href="issues/2025-09-29.html">Sep 29, 2025 — Bay Bridge work barge schedule</a></li>
+        <li><a href="issues/2025-09-22.html">Sep 22, 2025 — Elizabeth River weekend constraints</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="foot">
+    <div class="wrap row" style="justify-content:space-between">
+      <div>
+        © <span id="year"></span> Boat-Pro. All rights reserved.
+        <span class="muted">Made by operators for operators.</span>
+      </div>
+      <div class="row">
+        <a href="about.html">About</a>
+        <span class="muted">•</span>
+        <a href="legal/privacy.html">Privacy</a>
+        <span class="muted">•</span>
+        <a href="mailto:ops@boatpro.example">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year stamp
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // handle legacy hash "#subscribew up" (with space) → route to #subscribe
+    if (location.hash && decodeURIComponent(location.hash).trim().toLowerCase() === '#subscribew up'){
+      history.replaceState(null,'',location.pathname + '#subscribe');
+      document.getElementById('subscribe').scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
